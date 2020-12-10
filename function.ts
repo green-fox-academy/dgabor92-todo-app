@@ -39,8 +39,14 @@ export default class Todofunction {
     }
     console.log('________________________');
   }
-}
 
-let a = new Todofunction();
-a.printCommands();
-a.listTasks();
+  writeTask(task: string): void {
+    let list: string[] = [];
+    list.push(task);
+    fs.writeFileSync('task.txt', list, (err) => {
+      if (err) {
+        throw Error;
+      }
+    });
+  }
+}
