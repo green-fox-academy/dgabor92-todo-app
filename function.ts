@@ -41,21 +41,22 @@ export class Todofunction {
   }
 
   writeTask(): void {
-    fs.writeFileSync('task.txt', input[3], (err: any) => {
+    fs.appendFileSync('task.txt', '\n' + input[3], (err: any) => {
       if (err) {
-        throw Error;
+        console.log('Please add some task');
+      } else if (input[3] === '') {
+        console.log('Please add some task');
       }
     });
   }
 
-  removeTask(): void {
-    fs.readFileSync('task.txt', 'utf-8', function (err: any, data: string) {
-      if (err) {
-        return Error;
-      }
-      let lineExpectedFirst = data.split('\n').slice(1).join('\n');
-      fs.writeFileSync('task.txt', lineExpectedFirst);
-    });
+  removeTask(): string {
+    let context: string = fs.readFileSync('task.txt', 'utf-8');
+    if (context.lastIndexOf('\n') > 0) {
+      return context.substring(0, context.lastIndexOf('\n'));
+    } else {
+      return context;
+    }
   }
   completeTask(): void {
     fs.readFileSync('task.txt', 'utf-8', function (err: any, data: string) {
