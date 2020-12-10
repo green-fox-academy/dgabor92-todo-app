@@ -1,0 +1,23 @@
+{
+  "name": "dgabor92-todo-app",
+  "version": "1.0.0",
+  "description": "dgabor92-todo-app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/green-fox-academy/dgabor92-todo-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/green-fox-academy/dgabor92-todo-app/issues"
+  },
+  "homepage": "https://github.com/green-fox-academy/dgabor92-todo-app#readme",
+  "dependencies": {
+    "@types/node": "^14.14.12"
+  }
+}
