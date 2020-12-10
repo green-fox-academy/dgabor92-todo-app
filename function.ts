@@ -1,8 +1,8 @@
 'use strict';
 
 const fs = require('fs');
-
-export default class Todofunction {
+const input: string[] = process.argv;
+export class Todofunction {
   // print the argument lists
   printCommands(): void {
     console.log(
@@ -40,10 +40,8 @@ export default class Todofunction {
     console.log('________________________');
   }
 
-  writeTask(task: string): void {
-    let list: string[] = [];
-    list.push(task);
-    fs.writeFileSync('task.txt', list, (err) => {
+  writeTask(): void {
+    fs.writeFileSync('task.txt', input[3], (err: any) => {
       if (err) {
         throw Error;
       }
