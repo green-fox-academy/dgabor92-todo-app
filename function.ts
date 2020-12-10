@@ -47,4 +47,23 @@ export class Todofunction {
       }
     });
   }
+
+  removeTask(): void {
+    fs.readFileSync('task.txt', 'utf-8', function (err: any, data: string) {
+      if (err) {
+        return Error;
+      }
+      let lineExpectedFirst = data.split('\n').slice(1).join('\n');
+      fs.writeFileSync('task.txt', lineExpectedFirst);
+    });
+  }
+  completeTask(): void {
+    fs.readFileSync('task.txt', 'utf-8', function (err: any, data: string) {
+      if (err) {
+        throw Error;
+      }
+      let completedData = data.split('\n').slice(1);
+      console.log(completedData + 'completed');
+    });
+  }
 }

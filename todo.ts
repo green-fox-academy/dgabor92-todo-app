@@ -15,5 +15,13 @@ let todo = (): void => {
     let a = new Todofunction();
     a.writeTask();
   }
+  if (process.argv[2] === '-r') {
+    let a = new Todofunction();
+    a.removeTask();
+  }
+  if (process.argv[2] === '-c') {
+    let a = new Todofunction();
+    a.completeTask();
+  }
 };
 todo();
